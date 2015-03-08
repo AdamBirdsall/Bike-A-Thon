@@ -1,0 +1,44 @@
+{
+  "images" : [
+    {
+      "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "BikeAThonIcon_58pt.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "BikeAThonIcon_87pt.png",
+      "scale" : "3x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "BikeAThonIcon_80pt.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "BikeAThonIcon_120pt.png",
+      "scale" : "3x"
+    },
+    {
+      "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "BikeAThonIcon_120pt-1.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "BikeAThonIcon_180pt.png",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
