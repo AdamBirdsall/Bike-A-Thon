@@ -11,9 +11,12 @@
 
 @implementation Bike
 
+@synthesize allBikes;
+
 @dynamic bikeNumber;
 @dynamic riderName;
 @dynamic isOpen;
+@dynamic riderOrg;
 
 + (void)load {
     [self registerSubclass];
@@ -22,5 +25,7 @@
 + (NSString *)parseClassName {
     return @"Bike";
 }
+
+
 
 @end

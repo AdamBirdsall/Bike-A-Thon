@@ -26,7 +26,6 @@
 		816F98941A898738006CF11C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 816F98931A898738006CF11C /* Images.xcassets */; };
 		816F98971A898738006CF11C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 816F98951A898738006CF11C /* LaunchScreen.xib */; };
 		816F98A31A898739006CF11C /* Bike_A_ThonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 816F98A21A898739006CF11C /* Bike_A_ThonTests.m */; };
-		816F98AD1A89883F006CF11C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 816F98AC1A89883F006CF11C /* Parse.framework */; };
 		816F98AF1A898849006CF11C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 816F98AE1A898849006CF11C /* CoreGraphics.framework */; };
 		816F98B11A89885B006CF11C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 816F98B01A89885B006CF11C /* SystemConfiguration.framework */; };
 		816F98B31A898860006CF11C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 816F98B21A898860006CF11C /* QuartzCore.framework */; };
@@ -104,7 +103,6 @@
 		816F989C1A898739006CF11C /* Bike-A-ThonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bike-A-ThonTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816F98A11A898739006CF11C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		816F98A21A898739006CF11C /* Bike_A_ThonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bike_A_ThonTests.m; sourceTree = "<group>"; };
-		816F98AC1A89883F006CF11C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../../Documents/ParseSDK/Parse.framework; sourceTree = "<group>"; };
 		816F98AE1A898849006CF11C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		816F98B01A89885B006CF11C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		816F98B21A898860006CF11C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -166,7 +164,6 @@
 				816F98B31A898860006CF11C /* QuartzCore.framework in Frameworks */,
 				816F98B11A89885B006CF11C /* SystemConfiguration.framework in Frameworks */,
 				816F98AF1A898849006CF11C /* CoreGraphics.framework in Frameworks */,
-				816F98AD1A89883F006CF11C /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +214,6 @@
 				816F98B21A898860006CF11C /* QuartzCore.framework */,
 				816F98B01A89885B006CF11C /* SystemConfiguration.framework */,
 				816F98AE1A898849006CF11C /* CoreGraphics.framework */,
-				816F98AC1A89883F006CF11C /* Parse.framework */,
 				816F98821A898738006CF11C /* Bike-A-Thon */,
 				819F5DC41AA65F7C00710DE6 /* Sign Up Table Views */,
 				816F989F1A898739006CF11C /* Bike-A-ThonTests */,

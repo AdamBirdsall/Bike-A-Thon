@@ -11,15 +11,20 @@
 @interface TimeSlot : PFObject <PFSubclassing>
 
 + (NSString *)parseClassName;
-@property (retain) NSString *getTime;
+@property (retain) NSString *time;
 @property (retain) NSArray *bikes;
-@property BOOL *isOpen;
-
+@property BOOL *openBike;
+//
 //+ (NSString *)getTimeSlot;
+//+ (void)setTimeSlot:(NSString *)time;
+//+ (NSArray *)getBikes;
+//+ (void)setBikes:(NSArray *)bikeArray;
 //+ (BOOL *)getIsOpen;
-
--(instancetype)initWithTime: (NSString *)time
-                      bikes: (NSArray *)bikes
-                       open: (BOOL *)open;
+//+ (void)setIsOpen:(BOOL *)open;
+//+ (void)checkAvailable;
+//
+//-(instancetype)initWithTime: (NSString *)time
+//                      bikes: (NSArray *)bikes
+//                       open: (BOOL *)open;
 
 @end

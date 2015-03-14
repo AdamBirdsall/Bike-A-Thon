@@ -12,19 +12,19 @@
 @implementation TimeSlot
 
 @dynamic bikes;
-@dynamic getTime;
-@dynamic isOpen;
+@dynamic time;
+@dynamic openBike;
 
--(instancetype)initWithTime:(NSString *)time bikes:(NSArray *)bikes open:(BOOL *)open {
-    self = [super init];
-    
-    if (self) {
-        self.getTime = time;
-        self.bikes = bikes;
-        self.isOpen = open;
-    }
-    return self;
-}
+//-(instancetype)initWithTime:(NSString *)time bikes:(NSArray *)bikes open:(BOOL *)open {
+//    self = [super init];
+//    
+//    if (self) {
+//        self.getTime = time;
+//        self.bikes = bikes;
+//        self.isOpen = open;
+//    }
+//    return self;
+//}
 
 + (void)load {
     [self registerSubclass];
@@ -33,14 +33,5 @@
 + (NSString *)parseClassName {
     return @"TimeSlot";
 }
-
-/*
-+ (NSString *)getTimeSlot {
-    return self[@"time"];
-}*/
-
-//+ (BOOL *)getIsOpen {
-//    return self[@"openBike"];
-//}
 
 @end

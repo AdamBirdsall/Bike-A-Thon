@@ -13,6 +13,11 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *organizationField;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
+
+- (IBAction)march24:(id)sender;
+- (IBAction)march25:(id)sender;
+- (IBAction)march26:(id)sender;
 
 @end
 

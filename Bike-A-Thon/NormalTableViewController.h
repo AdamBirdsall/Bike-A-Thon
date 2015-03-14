@@ -19,7 +19,7 @@
 @property (nonatomic, strong) NSString *date;
 @property (nonatomic, strong) NSString *userName;
 @property (nonatomic, strong) NSString *organizationName;
-@property (nonatomic, strong) Day *day;
-
+@property (nonatomic, strong) NSString *time;
+@property (nonatomic, strong) NSString *objectID;
 
 @end

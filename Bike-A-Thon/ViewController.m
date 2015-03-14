@@ -27,6 +27,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)march24:(id)sender {
+    [_nameField resignFirstResponder];
+    [_organizationField resignFirstResponder];
+}
+
+- (IBAction)march25:(id)sender {
+    [_nameField resignFirstResponder];
+    [_organizationField resignFirstResponder];
+}
+
+- (IBAction)march26:(id)sender {
+    [_nameField resignFirstResponder];
+    [_organizationField resignFirstResponder];
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"March24th"]) {
         NormalTableViewController *destViewController = segue.destinationViewController;        
@@ -47,5 +62,19 @@
         destViewController.organizationName = _organizationField.text;
     }
 }
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([_nameField isFirstResponder] && [touch view] != _nameField) {
+        [_nameField resignFirstResponder];
+    }
+    else if ([_organizationField isFirstResponder] && [touch view] != _organizationField) {
+        [_organizationField resignFirstResponder];
+    }
+
+    [super touchesBegan:touches withEvent:event];
+}
+
 
 @end

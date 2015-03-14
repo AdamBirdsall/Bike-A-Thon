@@ -9,22 +9,28 @@
 #import "NormalTableViewController.h"
 
 @interface NormalTableViewController ()
-
+{
+    Day *day;
+    TimeSlot *timeSlot;
+    Bike *bike1;
+}
 @end
 
 @implementation NormalTableViewController
 
 @synthesize info;
-@synthesize day;
+@synthesize time;
 
 -(void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
     
     PFQuery *query = [Day query];
     [query whereKey:@"dayTitle" equalTo:_date];
     [query includeKey:@"timeSlots"];
     [query includeKey:@"timeSlots.bikes"];
     
-    day = [query getFirstObject];
+    day = (Day *)[query getFirstObject];
     
     [query orderByAscending:@"createdAt"];
 }
@@ -59,10 +65,10 @@
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
-    TimeSlot *timeSlot = [[day timeSlots] objectAtIndex:indexPath.row];
+    timeSlot = [[day timeSlots] objectAtIndex:indexPath.row];
     
     cell.textLabel.text = timeSlot[@"time"];
     
@@ -102,17 +108,27 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+
     
     if ([cell.detailTextLabel.text isEqualToString:@"No bikes available."]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Bikes Available" message:@"Please select a different time slot" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
+    else if ([_userName isEqualToString:@""]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter Name" message:@"Please enter your name before you sign up." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else if ([_organizationName isEqualToString:@""]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter Organization" message:@"Please enter your organization name before you sign up." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
     else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Select Bike" message:@"Please select which bike you want. \n(1 - 7)" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
-        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@", cell.textLabel.text] message:@"Please select which bike you want. \n(1 - 7)" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+            
         alert.alertViewStyle = UIAlertViewStylePlainTextInput;
         UITextField *textField = [alert textFieldAtIndex:0];
         textField.keyboardType = UIKeyboardTypeNumberPad;
+        
         
         [alert show];
     }
@@ -126,6 +142,7 @@
         
         switch (bike) {
             case 1:
+                [self addUserToTimeSlot:1];
                 break;
             case 2:
                 break;
@@ -147,8 +164,43 @@
     }
 }
 
-- (void) addUserToTimeSlot:(int)bike {
+- (void) addUserToTimeSlot:(int)bike  {
     
+    
+    PFQuery *query = [Day query];
+    [query whereKey:@"dayTitle" equalTo:_date];
+    [query includeKey:@"timeSlots"];
+    [query includeKey:@"timeSlots.bikes"];
+    
+    bike1.allBikes = timeSlot.bikes;
+    
+    for (int i = 0; i < [bike1.allBikes count]; i++) {
+        if ([[bike1.allBikes objectAtIndex:i] isOpen] boolValue) {
+            bike1 = [Bike object];
+    
+//            query getObjectInBackgroundWithId:block:<#^(PFObject *object, NSError *error)block#>
+            
+            bike1.riderName = _userName;
+            bike1.riderOrg = _organizationName;
+            //bike1.bikeNumber = bike;
+            bike1.isOpen = NO;
+            
+            [bike1 saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                    [alert show];
+                }
+                else {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not Success" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                    [alert show];
+                }
+            }];
+        }
+        else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unsuccessful" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }
 }
 
 

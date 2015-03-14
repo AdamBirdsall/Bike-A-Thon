@@ -12,7 +12,10 @@
 
 + (NSString *)parseClassName;
 @property (retain) NSString *riderName;
-@property int *bikeNumber;
-@property BOOL *isOpen;
+@property (retain) NSString *riderOrg;
+@property int bikeNumber;
+@property BOOL isOpen;
+
+@property (strong, nonatomic) NSArray *allBikes;
 
 @end
