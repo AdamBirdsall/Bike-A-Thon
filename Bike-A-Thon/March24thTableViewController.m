@@ -19,25 +19,25 @@
 
 //Setting up query for parse data
 //**********************************************************************************************
-- (id)initWithCoder:(NSCoder *)aCoder
-{
-    self = [super initWithCoder:aCoder];
-    if (self) {
-        // The className to query on
-        self.parseClassName = @"TimeSlot";
-        
-        // The key of the PFObject to display in the label of the default cell style
-        self.textKey = @"time";
-        
-        // Whether the built-in pull-to-refresh is enabled
-        self.pullToRefreshEnabled = YES;
-        
-        // Whether the built-in pagination is enabled
-        self.paginationEnabled = NO;
-        self.objectsPerPage = 12;
-    }
-    return self;
-}
+//- (id)initWithCoder:(NSCoder *)aCoder
+//{
+//    self = [super initWithCoder:aCoder];
+//    if (self) {
+//        // The className to query on
+//        self.parseClassName = @"TimeSlot";
+//        
+//        // The key of the PFObject to display in the label of the default cell style
+//        self.textKey = @"time";
+//        
+//        // Whether the built-in pull-to-refresh is enabled
+//        self.pullToRefreshEnabled = YES;
+//        
+//        // Whether the built-in pagination is enabled
+//        self.paginationEnabled = NO;
+//        self.objectsPerPage = 12;
+//    }
+//    return self;
+//}
 
 - (PFQuery *)queryForTable
 {
@@ -88,7 +88,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.objects count];
+    //return [self.objects count];
+    return 0;
 }
 
 
@@ -101,9 +102,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    TimeSlot *timeSlot = [self.objects objectAtIndex:indexPath.row];
+    //TimeSlot *timeSlot = [self.objects objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = timeSlot[@"time"];
+    //cell.textLabel.text = timeSlot[@"time"];
    /* if (timeSlot.isOpen) {
         cell.detailTextLabel.text = @"Open Bike!";
     } else {
@@ -128,10 +129,10 @@
     if ([segue.identifier isEqualToString:@"SignUp"]) {
         
         NSIndexPath *indexPath = nil;
-        PFObject *object;
+        //PFObject *object;
         
         indexPath = [self.tableView indexPathForSelectedRow];
-        object = [self.objects objectAtIndex:indexPath.row];
+        //object = [self.objects objectAtIndex:indexPath.row];
         
         
         Info *info = [[Info alloc] init];

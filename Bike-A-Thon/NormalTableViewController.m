@@ -109,7 +109,6 @@
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 
-    
     if ([cell.detailTextLabel.text isEqualToString:@"No bikes available."]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Bikes Available" message:@"Please select a different time slot" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
@@ -128,6 +127,7 @@
         alert.alertViewStyle = UIAlertViewStylePlainTextInput;
         UITextField *textField = [alert textFieldAtIndex:0];
         textField.keyboardType = UIKeyboardTypeNumberPad;
+        NSString *string;
         
         
         [alert show];
@@ -135,6 +135,7 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
     if (buttonIndex == 1) {
         
         UIAlertView *erroralert;
@@ -175,7 +176,7 @@
     bike1.allBikes = timeSlot.bikes;
     
     for (int i = 0; i < [bike1.allBikes count]; i++) {
-        if ([[bike1.allBikes objectAtIndex:i] isOpen] boolValue) {
+        if ([[bike1.allBikes objectAtIndex:i] isOpen]) {
             bike1 = [Bike object];
     
 //            query getObjectInBackgroundWithId:block:<#^(PFObject *object, NSError *error)block#>

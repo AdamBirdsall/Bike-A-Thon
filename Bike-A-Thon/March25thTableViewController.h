@@ -14,6 +14,6 @@
 #import "Day.h"
 #import "TimeSlot.h"
 
-@interface March25thTableViewController : PFQueryTableViewController
+@interface March25thTableViewController : UITableViewController
 
 @end

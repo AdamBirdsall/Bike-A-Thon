@@ -16,38 +16,38 @@
 
 //Setting up query for parse data
 //**********************************************************************************************
-- (id)initWithCoder:(NSCoder *)aCoder
-{
-    self = [super initWithCoder:aCoder];
-    if (self) {
-        // The className to query on
-        self.parseClassName = @"March26th";
-        
-        // The key of the PFObject to display in the label of the default cell style
-        self.textKey = @"time";
-        
-        // Whether the built-in pull-to-refresh is enabled
-        self.pullToRefreshEnabled = YES;
-        
-        // Whether the built-in pagination is enabled
-        self.paginationEnabled = NO;
-        self.objectsPerPage = 24;
-    }
-    return self;
-}
+//- (id)initWithCoder:(NSCoder *)aCoder
+//{
+//    self = [super initWithCoder:aCoder];
+//    if (self) {
+//        // The className to query on
+//        self.parseClassName = @"March26th";
+//        
+//        // The key of the PFObject to display in the label of the default cell style
+//        self.textKey = @"time";
+//        
+//        // Whether the built-in pull-to-refresh is enabled
+//        self.pullToRefreshEnabled = YES;
+//        
+//        // Whether the built-in pagination is enabled
+//        self.paginationEnabled = NO;
+//        self.objectsPerPage = 24;
+//    }
+//    return self;
+//}
 
-- (PFQuery *)queryForTable
-{
-    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    
-    if ([self.objects count] == 0) {
-        [query setCachePolicy: kPFCachePolicyCacheThenNetwork];
-    }
-    
-    [query orderByAscending:@"createdAt"];
-    
-    return query;
-}
+//- (PFQuery *)queryForTable
+//{
+//    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+//    
+//    if ([self.objects count] == 0) {
+//        [query setCachePolicy: kPFCachePolicyCacheThenNetwork];
+//    }
+//    
+//    [query orderByAscending:@"createdAt"];
+//    
+//    return query;
+//}
 //**********************************************************************************************
 
 
@@ -72,7 +72,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.objects count];
+    //return [self.objects count];
+    return 0;
 }
 
 
@@ -87,11 +88,11 @@
     
     
     
-    object = [self.objects objectAtIndex:indexPath.row];
+    //object = [self.objects objectAtIndex:indexPath.row];
     
     
-    cell.textLabel.text = [object objectForKey:@"time"];
-    cell.detailTextLabel.text = [object objectForKey:@"SignedUp"];
+//    cell.textLabel.text = [object objectForKey:@"time"];
+//    cell.detailTextLabel.text = [object objectForKey:@"SignedUp"];
     
     return cell;
 }
@@ -107,10 +108,10 @@
     if ([segue.identifier isEqualToString:@"SignUp"]) {
         
         NSIndexPath *indexPath = nil;
-        PFObject *object;
+        //PFObject *object;
         
         indexPath = [self.tableView indexPathForSelectedRow];
-        object = [self.objects objectAtIndex:indexPath.row];
+        //object = [self.objects objectAtIndex:indexPath.row];
         
         
         Info *info = [[Info alloc] init];
