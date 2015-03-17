@@ -13,6 +13,8 @@
     Day *day;
     TimeSlot *timeSlot;
     Bike *bike1;
+    
+    NSString *timeString;
 }
 @end
 
@@ -108,16 +110,19 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    timeSlot = [[day timeSlots] objectAtIndex:indexPath.row];
+
 
     if ([cell.detailTextLabel.text isEqualToString:@"No bikes available."]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Bikes Available" message:@"Please select a different time slot" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
-    else if ([_userName isEqualToString:@""]) {
+    else if ([_userName isEqualToString:@""] || [_userName isEqualToString:@" "]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter Name" message:@"Please enter your name before you sign up." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
-    else if ([_organizationName isEqualToString:@""]) {
+    else if ([_organizationName isEqualToString:@""] || [_organizationName isEqualToString:@" "]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter Organization" message:@"Please enter your organization name before you sign up." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
@@ -127,8 +132,9 @@
         alert.alertViewStyle = UIAlertViewStylePlainTextInput;
         UITextField *textField = [alert textFieldAtIndex:0];
         textField.keyboardType = UIKeyboardTypeNumberPad;
-        NSString *string;
         
+        timeString = cell.textLabel.text;
+        timeSlot.time = timeString;
         
         [alert show];
     }
@@ -141,68 +147,57 @@
         UIAlertView *erroralert;
         int bike = [[alertView textFieldAtIndex:0].text intValue];
         
-        switch (bike) {
-            case 1:
-                [self addUserToTimeSlot:1];
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
-            default:
-                erroralert = [[UIAlertView alloc] initWithTitle:@"Invalid Input" message:@"Please enter correct input. \n (1 - 7)" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                [erroralert show];
-                break;
+        if (bike == 1 || bike == 2 || bike == 3 || bike == 4 || bike == 5 || bike == 6 || bike == 7) {
+            [self addUserToTimeSlot:bike];
+        }
+        else {
+            erroralert = [[UIAlertView alloc] initWithTitle:@"Invalid Input" message:@"Please enter correct input. \n (1 - 7)" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [erroralert show];
         }
     }
 }
 
 - (void) addUserToTimeSlot:(int)bike  {
+
+    Bike *newBike = timeSlot.bikes[bike - 1];
     
-    
-    PFQuery *query = [Day query];
-    [query whereKey:@"dayTitle" equalTo:_date];
-    [query includeKey:@"timeSlots"];
-    [query includeKey:@"timeSlots.bikes"];
-    
-    bike1.allBikes = timeSlot.bikes;
-    
-    for (int i = 0; i < [bike1.allBikes count]; i++) {
-        if ([[bike1.allBikes objectAtIndex:i] isOpen]) {
-            bike1 = [Bike object];
-    
-//            query getObjectInBackgroundWithId:block:<#^(PFObject *object, NSError *error)block#>
-            
-            bike1.riderName = _userName;
-            bike1.riderOrg = _organizationName;
-            //bike1.bikeNumber = bike;
-            bike1.isOpen = NO;
-            
-            [bike1 saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (!error) {
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                    [alert show];
-                }
-                else {
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not Success" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                    [alert show];
-                }
-            }];
-        }
-        else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unsuccessful" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-            [alert show];
-        }
+    if (newBike.isOpen) {
+        
+        newBike.riderName = _userName;
+        newBike.riderOrg = _organizationName;
+        newBike.isOpen = NO;
+        
+        [newBike save];
+        
+        [self checkIsOpen];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:[NSString stringWithFormat:@"You have signed up for bike %d at\n %@ on %@!", bike, timeString, _date]  delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        
+        [self.tableView reloadData];
+        
+    } else {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Bike Taken" message:[NSString stringWithFormat:@"Please select a remaining bike."] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
     }
 }
+
+- (void) checkIsOpen {
+    
+    for (int i = 0; i < [timeSlot.bikes count]; i++) {
+        if ([timeSlot.bikes[i] isOpen]) {
+            timeSlot[@"openBike"] = @YES;
+            [timeSlot save];
+            return;
+        }
+        
+        timeSlot[@"openBike"] = @NO;
+        [timeSlot save];
+        
+    }
+}
+
 
 
 

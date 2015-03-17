@@ -24,6 +24,11 @@
 		8150E7831AB4A348002997AD /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8150E77F1AB4A348002997AD /* ParseFacebookUtils.framework */; };
 		8150E7841AB4A348002997AD /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8150E7801AB4A348002997AD /* ParseUI.framework */; };
 		8150E7861AB4A4EB002997AD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8150E7851AB4A4EB002997AD /* libsqlite3.dylib */; };
+		8150E78C1AB7C254002997AD /* bikeAthon80pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8150E7871AB7C254002997AD /* bikeAthon80pt.png */; };
+		8150E78D1AB7C254002997AD /* bikeAthon120pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8150E7881AB7C254002997AD /* bikeAthon120pt.png */; };
+		8150E78E1AB7C254002997AD /* bikeAthon58pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8150E7891AB7C254002997AD /* bikeAthon58pt.png */; };
+		8150E78F1AB7C254002997AD /* bikeAthon87pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8150E78A1AB7C254002997AD /* bikeAthon87pt.png */; };
+		8150E7901AB7C254002997AD /* bikeAthon180pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8150E78B1AB7C254002997AD /* bikeAthon180pt.png */; };
 		816F98861A898738006CF11C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 816F98851A898738006CF11C /* main.m */; };
 		816F98891A898738006CF11C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 816F98881A898738006CF11C /* AppDelegate.m */; };
 		816F988C1A898738006CF11C /* Bike_A_Thon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 816F988A1A898738006CF11C /* Bike_A_Thon.xcdatamodeld */; };
@@ -42,12 +47,6 @@
 		816F98BD1A898880006CF11C /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 816F98BC1A898880006CF11C /* libz.1.1.3.dylib */; };
 		816F98BF1A898884006CF11C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 816F98BE1A898884006CF11C /* CFNetwork.framework */; };
 		816F98C11A898889006CF11C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 816F98C01A898889006CF11C /* AudioToolbox.framework */; };
-		819F5DBD1AA65F5500710DE6 /* March24thTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F5DBC1AA65F5500710DE6 /* March24thTableViewController.m */; };
-		819F5DC01AA65F6800710DE6 /* March25thTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F5DBF1AA65F6800710DE6 /* March25thTableViewController.m */; };
-		819F5DC31AA65F7300710DE6 /* March26thTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F5DC21AA65F7300710DE6 /* March26thTableViewController.m */; };
-		819F5DC71AA66DFB00710DE6 /* 24thSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F5DC61AA66DFB00710DE6 /* 24thSignUpViewController.m */; };
-		819F5DCA1AA66E0800710DE6 /* 25thSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F5DC91AA66E0800710DE6 /* 25thSignUpViewController.m */; };
-		819F5DCD1AA66E3600710DE6 /* 26thSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F5DCC1AA66E3600710DE6 /* 26thSignUpViewController.m */; };
 		819F5DD31AA6811E00710DE6 /* Info.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F5DD21AA6811E00710DE6 /* Info.m */; };
 		819F5DDB1AA68C0700710DE6 /* StarShield.png in Resources */ = {isa = PBXBuildFile; fileRef = 819F5DDA1AA68C0700710DE6 /* StarShield.png */; };
 		819F5DDD1AA7933100710DE6 /* AbilityExpLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 819F5DDC1AA7933100710DE6 /* AbilityExpLogo.png */; };
@@ -63,10 +62,6 @@
 		81EC830A1A9D4A7400089AB3 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 81EC83091A9D4A7400089AB3 /* home.png */; };
 		81EC835E1A9E5C5300089AB3 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC835D1A9E5C5300089AB3 /* MainPageViewController.m */; };
 		81EC83611A9E5C6600089AB3 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EC83601A9E5C6600089AB3 /* PageContentViewController.m */; };
-		81EC83631A9E5DB400089AB3 /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = 81EC83621A9E5DB400089AB3 /* page2.png */; };
-		81EC83651A9E5DBE00089AB3 /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = 81EC83641A9E5DBE00089AB3 /* page1.png */; };
-		81EC83671A9E5DC400089AB3 /* page3.png in Resources */ = {isa = PBXBuildFile; fileRef = 81EC83661A9E5DC400089AB3 /* page3.png */; };
-		81EC83691A9E5DCD00089AB3 /* page4.png in Resources */ = {isa = PBXBuildFile; fileRef = 81EC83681A9E5DCD00089AB3 /* page4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +96,11 @@
 		8150E77F1AB4A348002997AD /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = ../../../Documents/ParseSDK/ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		8150E7801AB4A348002997AD /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = ../../../Documents/ParseSDK/ParseUI.framework; sourceTree = "<group>"; };
 		8150E7851AB4A4EB002997AD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		8150E7871AB7C254002997AD /* bikeAthon80pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bikeAthon80pt.png; sourceTree = "<group>"; };
+		8150E7881AB7C254002997AD /* bikeAthon120pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bikeAthon120pt.png; sourceTree = "<group>"; };
+		8150E7891AB7C254002997AD /* bikeAthon58pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bikeAthon58pt.png; sourceTree = "<group>"; };
+		8150E78A1AB7C254002997AD /* bikeAthon87pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bikeAthon87pt.png; sourceTree = "<group>"; };
+		8150E78B1AB7C254002997AD /* bikeAthon180pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bikeAthon180pt.png; sourceTree = "<group>"; };
 		816F98801A898738006CF11C /* Bike-A-Thon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bike-A-Thon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816F98841A898738006CF11C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		816F98851A898738006CF11C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -125,18 +125,6 @@
 		816F98BC1A898880006CF11C /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		816F98BE1A898884006CF11C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		816F98C01A898889006CF11C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		819F5DBB1AA65F5500710DE6 /* March24thTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = March24thTableViewController.h; sourceTree = "<group>"; };
-		819F5DBC1AA65F5500710DE6 /* March24thTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = March24thTableViewController.m; sourceTree = "<group>"; };
-		819F5DBE1AA65F6800710DE6 /* March25thTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = March25thTableViewController.h; sourceTree = "<group>"; };
-		819F5DBF1AA65F6800710DE6 /* March25thTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = March25thTableViewController.m; sourceTree = "<group>"; };
-		819F5DC11AA65F7300710DE6 /* March26thTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = March26thTableViewController.h; sourceTree = "<group>"; };
-		819F5DC21AA65F7300710DE6 /* March26thTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = March26thTableViewController.m; sourceTree = "<group>"; };
-		819F5DC51AA66DFB00710DE6 /* 24thSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 24thSignUpViewController.h; sourceTree = "<group>"; };
-		819F5DC61AA66DFB00710DE6 /* 24thSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = 24thSignUpViewController.m; sourceTree = "<group>"; };
-		819F5DC81AA66E0800710DE6 /* 25thSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 25thSignUpViewController.h; sourceTree = "<group>"; };
-		819F5DC91AA66E0800710DE6 /* 25thSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = 25thSignUpViewController.m; sourceTree = "<group>"; };
-		819F5DCB1AA66E3600710DE6 /* 26thSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 26thSignUpViewController.h; sourceTree = "<group>"; };
-		819F5DCC1AA66E3600710DE6 /* 26thSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = 26thSignUpViewController.m; sourceTree = "<group>"; };
 		819F5DD11AA6811E00710DE6 /* Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Info.h; sourceTree = "<group>"; };
 		819F5DD21AA6811E00710DE6 /* Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Info.m; sourceTree = "<group>"; };
 		819F5DDA1AA68C0700710DE6 /* StarShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarShield.png; sourceTree = "<group>"; };
@@ -155,10 +143,6 @@
 		81EC835D1A9E5C5300089AB3 /* MainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageViewController.m; sourceTree = "<group>"; };
 		81EC835F1A9E5C6600089AB3 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		81EC83601A9E5C6600089AB3 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
-		81EC83621A9E5DB400089AB3 /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
-		81EC83641A9E5DBE00089AB3 /* page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1.png; sourceTree = "<group>"; };
-		81EC83661A9E5DC400089AB3 /* page3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page3.png; sourceTree = "<group>"; };
-		81EC83681A9E5DCD00089AB3 /* page4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page4.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,7 +223,6 @@
 				816F98B01A89885B006CF11C /* SystemConfiguration.framework */,
 				816F98AE1A898849006CF11C /* CoreGraphics.framework */,
 				816F98821A898738006CF11C /* Bike-A-Thon */,
-				819F5DC41AA65F7C00710DE6 /* Sign Up Table Views */,
 				816F989F1A898739006CF11C /* Bike-A-ThonTests */,
 				816F98811A898738006CF11C /* Products */,
 				81EC83041A9D491200089AB3 /* Icons and Pictures */,
@@ -264,8 +247,8 @@
 				816F98871A898738006CF11C /* AppDelegate.h */,
 				816F98881A898738006CF11C /* AppDelegate.m */,
 				816F98931A898738006CF11C /* Images.xcassets */,
-				816F98951A898738006CF11C /* LaunchScreen.xib */,
 				816F988A1A898738006CF11C /* Bike_A_Thon.xcdatamodeld */,
+				816F98951A898738006CF11C /* LaunchScreen.xib */,
 				816F98901A898738006CF11C /* Main.storyboard */,
 				816F98831A898738006CF11C /* Supporting Files */,
 			);
@@ -311,53 +294,14 @@
 			name = "Page View Controller";
 			sourceTree = "<group>";
 		};
-		819F5DC41AA65F7C00710DE6 /* Sign Up Table Views */ = {
-			isa = PBXGroup;
-			children = (
-				819F5DCE1AA66E3F00710DE6 /* March 24th */,
-				819F5DCF1AA66E4D00710DE6 /* March 25th */,
-				819F5DD01AA66E5A00710DE6 /* March 26th */,
-			);
-			name = "Sign Up Table Views";
-			path = "Bike-A-Thon";
-			sourceTree = "<group>";
-		};
-		819F5DCE1AA66E3F00710DE6 /* March 24th */ = {
-			isa = PBXGroup;
-			children = (
-				819F5DBB1AA65F5500710DE6 /* March24thTableViewController.h */,
-				819F5DBC1AA65F5500710DE6 /* March24thTableViewController.m */,
-				819F5DC51AA66DFB00710DE6 /* 24thSignUpViewController.h */,
-				819F5DC61AA66DFB00710DE6 /* 24thSignUpViewController.m */,
-			);
-			name = "March 24th";
-			sourceTree = "<group>";
-		};
-		819F5DCF1AA66E4D00710DE6 /* March 25th */ = {
-			isa = PBXGroup;
-			children = (
-				819F5DBE1AA65F6800710DE6 /* March25thTableViewController.h */,
-				819F5DBF1AA65F6800710DE6 /* March25thTableViewController.m */,
-				819F5DC81AA66E0800710DE6 /* 25thSignUpViewController.h */,
-				819F5DC91AA66E0800710DE6 /* 25thSignUpViewController.m */,
-			);
-			name = "March 25th";
-			sourceTree = "<group>";
-		};
-		819F5DD01AA66E5A00710DE6 /* March 26th */ = {
-			isa = PBXGroup;
-			children = (
-				819F5DC11AA65F7300710DE6 /* March26thTableViewController.h */,
-				819F5DC21AA65F7300710DE6 /* March26thTableViewController.m */,
-				819F5DCB1AA66E3600710DE6 /* 26thSignUpViewController.h */,
-				819F5DCC1AA66E3600710DE6 /* 26thSignUpViewController.m */,
-			);
-			name = "March 26th";
-			sourceTree = "<group>";
-		};
 		81EC83041A9D491200089AB3 /* Icons and Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				8150E7871AB7C254002997AD /* bikeAthon80pt.png */,
+				8150E7881AB7C254002997AD /* bikeAthon120pt.png */,
+				8150E7891AB7C254002997AD /* bikeAthon58pt.png */,
+				8150E78A1AB7C254002997AD /* bikeAthon87pt.png */,
+				8150E78B1AB7C254002997AD /* bikeAthon180pt.png */,
 				819F5DEE1AA8210100710DE6 /* EndPoint.png */,
 				819F5DE21AA7B0DD00710DE6 /* BikeAThonIcon_58pt.png */,
 				819F5DEC1AA7B14200710DE6 /* BikeAThonIcon_120pt.png */,
@@ -377,10 +321,6 @@
 				81EC83051A9D493500089AB3 /* calendar.png */,
 				81EC83091A9D4A7400089AB3 /* home.png */,
 				81EC83071A9D494300089AB3 /* clock.png */,
-				81EC83641A9E5DBE00089AB3 /* page1.png */,
-				81EC83621A9E5DB400089AB3 /* page2.png */,
-				81EC83661A9E5DC400089AB3 /* page3.png */,
-				81EC83681A9E5DCD00089AB3 /* page4.png */,
 			);
 			name = "Icons and Pictures";
 			path = "Bike-A-ThonTests";
@@ -435,6 +375,7 @@
 				TargetAttributes = {
 					816F987F1A898738006CF11C = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = FT34PLEEM7;
 					};
 					816F989B1A898739006CF11C = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -467,26 +408,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				816F98921A898738006CF11C /* Main.storyboard in Resources */,
+				8150E78D1AB7C254002997AD /* bikeAthon120pt.png in Resources */,
 				819F5DDF1AA7934000710DE6 /* BigStarShield.png in Resources */,
 				811400581A9E9192004F00B3 /* GUF.jpg in Resources */,
 				8114005A1A9E9192004F00B3 /* CHRIS.jpg in Resources */,
 				81EC83081A9D494300089AB3 /* clock.png in Resources */,
-				81EC83651A9E5DBE00089AB3 /* page1.png in Resources */,
 				819F5DEF1AA8210100710DE6 /* EndPoint.png in Resources */,
-				81EC83631A9E5DB400089AB3 /* page2.png in Resources */,
+				8150E78C1AB7C254002997AD /* bikeAthon80pt.png in Resources */,
+				8150E78E1AB7C254002997AD /* bikeAthon58pt.png in Resources */,
 				819F5DE61AA7B0DD00710DE6 /* BikeAThonIcon_58pt.png in Resources */,
 				8114005C1A9EB9C9004F00B3 /* IMG_2526.JPG in Resources */,
 				819F5DE81AA7B0DD00710DE6 /* BikeAThonIcon_87pt.png in Resources */,
 				81EC830A1A9D4A7400089AB3 /* home.png in Resources */,
-				81EC83691A9E5DCD00089AB3 /* page4.png in Resources */,
 				8114005E1AA00251004F00B3 /* LearnMoreButton.png in Resources */,
 				819F5DE71AA7B0DD00710DE6 /* BikeAThonIcon_80pt.png in Resources */,
 				819F5DDB1AA68C0700710DE6 /* StarShield.png in Resources */,
 				819F5DED1AA7B14200710DE6 /* BikeAThonIcon_120pt.png in Resources */,
+				8150E7901AB7C254002997AD /* bikeAthon180pt.png in Resources */,
 				819F5DDD1AA7933100710DE6 /* AbilityExpLogo.png in Resources */,
+				8150E78F1AB7C254002997AD /* bikeAthon87pt.png in Resources */,
 				811400571A9E9192004F00B3 /* BAM.jpg in Resources */,
 				819F5DE91AA7B0DD00710DE6 /* BikeAThonIcon_180pt.png in Resources */,
-				81EC83671A9E5DC400089AB3 /* page3.png in Resources */,
 				811400521A9E8E14004F00B3 /* Capitol.jpg in Resources */,
 				81EC83061A9D493500089AB3 /* calendar.png in Resources */,
 				816F98971A898738006CF11C /* LaunchScreen.xib in Resources */,
@@ -510,21 +452,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				819F5DD31AA6811E00710DE6 /* Info.m in Sources */,
-				819F5DC71AA66DFB00710DE6 /* 24thSignUpViewController.m in Sources */,
 				81EC835E1A9E5C5300089AB3 /* MainPageViewController.m in Sources */,
-				819F5DCD1AA66E3600710DE6 /* 26thSignUpViewController.m in Sources */,
 				8150E7741AA91795002997AD /* NormalTableViewController.m in Sources */,
 				8150E76B1AA8FE3D002997AD /* Bike.m in Sources */,
-				819F5DBD1AA65F5500710DE6 /* March24thTableViewController.m in Sources */,
 				8150E7711AA8FE57002997AD /* TimeSlot.m in Sources */,
 				816F98891A898738006CF11C /* AppDelegate.m in Sources */,
 				816F98861A898738006CF11C /* main.m in Sources */,
-				819F5DCA1AA66E0800710DE6 /* 25thSignUpViewController.m in Sources */,
 				816F988F1A898738006CF11C /* ViewController.m in Sources */,
-				819F5DC31AA65F7300710DE6 /* March26thTableViewController.m in Sources */,
 				816F988C1A898738006CF11C /* Bike_A_Thon.xcdatamodeld in Sources */,
 				8150E76E1AA8FE4C002997AD /* Day.m in Sources */,
-				819F5DC01AA65F6800710DE6 /* March25thTableViewController.m in Sources */,
 				81EC83611A9E5C6600089AB3 /* PageContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,6 +583,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/adambirdsall/Documents/ParseSDK,
@@ -654,6 +592,7 @@
 				INFOPLIST_FILE = "Bike-A-Thon/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -661,6 +600,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/adambirdsall/Documents/ParseSDK,
@@ -668,6 +609,7 @@
 				INFOPLIST_FILE = "Bike-A-Thon/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

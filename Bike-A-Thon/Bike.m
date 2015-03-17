@@ -18,12 +18,17 @@
 @dynamic isOpen;
 @dynamic riderOrg;
 
+
 + (void)load {
     [self registerSubclass];
 }
 
 + (NSString *)parseClassName {
     return @"Bike";
+}
+
++ (NSString *)getBikeNumber {
+    return @"bikeNumber";
 }
 
 

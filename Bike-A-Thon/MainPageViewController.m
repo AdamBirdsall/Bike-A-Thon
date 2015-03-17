@@ -19,8 +19,7 @@
     [super viewDidLoad];
     
     // Create the data model
-    _pageTitles = @[@"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Free Regular Update", @"hello"];
-    _pageImages = @[@"AbilityExpLogo.png", @"EndPoint.png", @"EndPoint.png", @"EndPoint.png"];
+    _pageImages = @[@"AbilityExpLogo.png", @"fistbump.jpg", @"CHRIS.jpg", @"BAM.jpg", @"EndPoint.png"];
     
     
     
