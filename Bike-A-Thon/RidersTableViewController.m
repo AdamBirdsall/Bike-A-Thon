@@ -1,24 +1,24 @@
 //
-//  NormalTableViewController.m
+//  RidersTableViewController.m
 //  Bike-A-Thon
 //
-//  Created by Adam Birdsall on 3/5/15.
-//  Copyright (c) 2015 Adam Birdsall. All rights reserved.
+//  Created by Adam Birdsall on 3/1/16.
+//  Copyright © 2016 Adam Birdsall. All rights reserved.
 //
 
-#import "NormalTableViewController.h"
+#import "RidersTableViewController.h"
 
-@interface NormalTableViewController ()
+@interface RidersTableViewController  ()
 {
     Day *day;
     TimeSlot *timeSlot;
     Bike *bike1;
     
-    NSString *timeString;    
+    NSString *timeString;
 }
 @end
 
-@implementation NormalTableViewController
+@implementation RidersTableViewController
 
 @synthesize info;
 @synthesize time;
@@ -112,8 +112,8 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
     timeSlot = [[day timeSlots] objectAtIndex:indexPath.row];
-
-
+    
+    
     if ([cell.detailTextLabel.text isEqualToString:@"No bikes available."]) {
         
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"No Bikes Available"
@@ -138,7 +138,7 @@
         [self presentViewController:alert animated:YES completion:nil];
     }
     else if ([_organizationName isEqualToString:@""] || [_organizationName isEqualToString:@" "]) {
-
+        
         
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Enter Organization"
                                                                        message:@"Please enter your organization name before you sign up."
@@ -165,7 +165,7 @@
                                                               }];
         
         UIAlertAction* noAction = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction * action) {}];
+                                                         handler:^(UIAlertAction * action) {}];
         [alert addAction:noAction];
         [alert addAction:defaultAction];
         
@@ -178,7 +178,7 @@
 
 - (void) addUserToTimeSlot {
     
-    for (int i = 0; i < [timeSlot.bikes count]; i++) {
+    for (int i = 0; i < 7; i++) {
         Bike *newBike = timeSlot.bikes[i];
         
         if (newBike.isOpen) {
@@ -204,22 +204,10 @@
             
             [self.tableView reloadData];
             
-            NSString *post = [NSString stringWithFormat:@"entry.877086558=%@&entry.1498135098=%@&entry.1424661284=%@&entry.2606285=%@&submit=Submit",_userName,_organizationName, _date, timeString];
-            NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
-            
-            NSURL *url = [NSURL URLWithString:@"https://docs.google.com/forms/d/1HreENUdtNIwo8Y8Lq2JSlbmk8HVbaHweM2ZpmcydJIE/formResponse"];
-            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-
-            [request setHTTPMethod:@"POST"];
-            [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-            [request setHTTPBody:postData];
-            
-            [[[NSURLSession sharedSession] dataTaskWithRequest:request] resume];
-            
             return;
         }
     }
-
+    
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"No Bikes left"
                                                                    message:@"Please select another time."
                                                             preferredStyle:UIAlertControllerStyleAlert];
@@ -245,10 +233,6 @@
         
     }
 }
-
-
-
-
 
 
 @end

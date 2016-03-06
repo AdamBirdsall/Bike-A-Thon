@@ -13,6 +13,8 @@
 + (NSString *)parseClassName;
 @property (retain) NSString *riderName;
 @property (retain) NSString *riderOrg;
+@property (retain) NSString *Day;
+@property (retain) NSString *Time;
 @property int bikeNumber;
 @property BOOL isOpen;
 

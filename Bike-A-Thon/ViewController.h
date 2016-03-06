@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #import "Info.h"
 
-@interface ViewController : UIViewController
+
+@interface ViewController : UIViewController <MFMailComposeViewControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *organizationField;

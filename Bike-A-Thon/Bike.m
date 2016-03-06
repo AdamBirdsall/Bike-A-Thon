@@ -17,6 +17,8 @@
 @dynamic riderName;
 @dynamic isOpen;
 @dynamic riderOrg;
+@dynamic Day;
+@dynamic Time;
 
 
 + (void)load {

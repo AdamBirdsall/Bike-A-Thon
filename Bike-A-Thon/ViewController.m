@@ -43,24 +43,65 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"March24th"]) {
+    if ([segue.identifier isEqualToString:@"March22th"]) {
         NormalTableViewController *destViewController = segue.destinationViewController;        
-        destViewController.date = @"March 24th, 2015";
+        destViewController.date = @"March 22th, 2016";
         destViewController.userName = _nameField.text;
         destViewController.organizationName = _organizationField.text;
     }
-    else if ([segue.identifier isEqualToString:@"March25th"]) {
+    else if ([segue.identifier isEqualToString:@"March23th"]) {
         NormalTableViewController *destViewController = segue.destinationViewController;
-        destViewController.date = @"March 25th, 2015";
+        destViewController.date = @"March 23th, 2016";
         destViewController.userName = _nameField.text;
         destViewController.organizationName = _organizationField.text;
     }
-    else if ([segue.identifier isEqualToString:@"March26th"]) {
+    else if ([segue.identifier isEqualToString:@"March24th"]) {
         NormalTableViewController *destViewController = segue.destinationViewController;
-        destViewController.date = @"March 26th, 2015";
+        destViewController.date = @"March 24th, 2016";
         destViewController.userName = _nameField.text;
         destViewController.organizationName = _organizationField.text;
     }
+}
+- (IBAction)helpButton:(id)sender {
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Send email for help?"
+                                                                   message:@"Send an email if you need to switch / delete time slot(s) you have signed up for."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+
+                                                              // Email Subject
+                                                              NSString *emailTitle = @"Bike-A-Thon Help";
+                                                              
+                                                              // To address
+                                                              NSArray *toRecipents = [NSArray arrayWithObject:@"adam.birdsall4@gmail.com"];
+                                                              
+                                                              MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+                                                              mc.mailComposeDelegate = self;
+                                                              [mc setSubject:emailTitle];
+                                                              [mc setToRecipients:toRecipents];
+                                                              
+                                                              // Present mail view controller on screen
+                                                              [self presentViewController:mc animated:YES completion:NULL];
+                                                              
+                                                          }];
+    
+    UIAlertAction* noAction = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * action) {}];
+    [alert addAction:defaultAction];
+    [alert addAction:noAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [_nameField resignFirstResponder];
+    [_organizationField resignFirstResponder];
+    return YES;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

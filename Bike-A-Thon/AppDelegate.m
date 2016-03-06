@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
+#import <Bolts/Bolts.h>
 
 @interface AppDelegate ()
 
@@ -113,7 +115,7 @@
     if (!coordinator) {
         return nil;
     }
-    _managedObjectContext = [[NSManagedObjectContext alloc] init];
+    _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     return _managedObjectContext;
 }
