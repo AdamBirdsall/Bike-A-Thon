@@ -40,18 +40,19 @@
 - (IBAction)march26:(id)sender {
     [_nameField resignFirstResponder];
     [_organizationField resignFirstResponder];
+    [self performSegueWithIdentifier:@"March24th" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"March22th"]) {
         NormalTableViewController *destViewController = segue.destinationViewController;        
-        destViewController.date = @"March 22th, 2016";
+        destViewController.date = @"March 22nd, 2016";
         destViewController.userName = _nameField.text;
         destViewController.organizationName = _organizationField.text;
     }
     else if ([segue.identifier isEqualToString:@"March23th"]) {
         NormalTableViewController *destViewController = segue.destinationViewController;
-        destViewController.date = @"March 23th, 2016";
+        destViewController.date = @"March 23rd, 2016";
         destViewController.userName = _nameField.text;
         destViewController.organizationName = _organizationField.text;
     }
@@ -60,6 +61,16 @@
         destViewController.date = @"March 24th, 2016";
         destViewController.userName = _nameField.text;
         destViewController.organizationName = _organizationField.text;
+    }
+    else {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"No Bikes Available"
+                                                                       message:@"Please select a different time slot."
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 - (IBAction)helpButton:(id)sender {

@@ -178,7 +178,7 @@
 
 - (void) addUserToTimeSlot {
     
-    for (int i = 0; i < [timeSlot.bikes count]; i++) {
+    for (int i = 0; i < 13; i++) {
         Bike *newBike = timeSlot.bikes[i];
         
         if (newBike.isOpen) {
@@ -194,7 +194,7 @@
             [self checkIsOpen];
             
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Success!"
-                                                                           message:[NSString stringWithFormat:@"You have signed up at\n %@ on %@!", timeString, _date]
+                                                                           message:[NSString stringWithFormat:@"You have signed up for\n %@ at %@!", _date, timeString]
                                                                     preferredStyle:UIAlertControllerStyleAlert];
             
             UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
@@ -233,7 +233,7 @@
 
 - (void) checkIsOpen {
     
-    for (int i = 0; i < [timeSlot.bikes count]; i++) {
+    for (int i = 0; i < 13; i++) {
         if ([timeSlot.bikes[i] isOpen]) {
             timeSlot[@"openBike"] = @YES;
             [timeSlot save];

@@ -132,7 +132,6 @@
                                 </state>
                                 <connections>
                                     <action selector="march26:" destination="O5p-ne-RGU" eventType="touchUpInside" id="gOT-Cn-ItS"/>
-                                    <segue destination="huR-3J-muH" kind="show" identifier="March24th" id="OFC-kq-DcD"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="akX-Kb-0dO">
@@ -222,6 +221,7 @@
                     <connections>
                         <outlet property="nameField" destination="akX-Kb-0dO" id="G7V-nN-U7r"/>
                         <outlet property="organizationField" destination="5kV-CT-Ndl" id="bd8-3g-XuT"/>
+                        <segue destination="huR-3J-muH" kind="show" identifier="March24th" id="Pc9-88-ZoQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYj-hu-tui" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -282,6 +282,6 @@
         <image name="home.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OFC-kq-DcD"/>
+        <segue reference="Pc9-88-ZoQ"/>
     </inferredMetricsTieBreakers>
 </document>
